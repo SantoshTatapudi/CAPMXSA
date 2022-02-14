@@ -1,8 +1,9 @@
 namespace capdemo.db;
 using { cuid, managed, temporal, Currency } from '@sap/cds/common';
-using { capdemo.commons } from './commons.cds';
+using { capdemo.commons } from './commons';
 
 type Guid : String(32);
+
 
 context master {
     entity businesspartner {
@@ -16,11 +17,7 @@ context master {
         BP_ID: String(32);	
         COMPANY_NAME: String(250);
     }
-    annotate businesspartner with {
-        NODE_KEY @title : '{i18n>bp_key}';
-        BP_ROLE @title : '{i18n>bp_role}';
-    };
-    
+
     entity address {
         key NODE_KEY: Guid;
         CITY: String(44);
@@ -35,21 +32,13 @@ context master {
         LONGITUDE: Decimal;
         businesspartner: Association to one businesspartner on businesspartner.ADDRESS_GUID = $self;
     }
-	
-    // entity prodtext {
-    //     key NODE_KEY: Guid;
-    //     PARENT_KEY: Guid;
-    //     LANGUAGE:String(2);	
-    //     TEXT: String(256);        
-    // }
 
     entity product {
         key NODE_KEY: Guid;
         PRODUCT_ID: String(28);
         TYPE_CODE: String(2);
         CATEGORY: String(32);
-//        DESC_GUID: Association to prodtext;
-        DESCRIPTION : localized String(255);
+        DESCRIPTION: localized String(255);
         SUPPLIER_GUID: Association to master.businesspartner;
         TAX_TARIF_CODE: Integer;
         MEASURE_UNIT: String(2);
@@ -62,9 +51,27 @@ context master {
         HEIGHT:	Decimal;
         DIM_UNIT:String(2);
     }
+
+    entity employees: cuid {
+        nameFirst: String(40);
+        nameMiddle: String(40);	
+        nameLast: String(40);	
+        nameInitials: String(40);	
+        sex	: commons.Gender;
+        language: String(1);
+        phoneNumber: commons.PhoneNumber;
+        email: commons.Email;
+        loginName: String(12);
+        Currency: Currency;
+        salaryAmount: commons.AmountT;	
+        accountNumber: String(16);	
+        bankId: String(20);
+        bankName: String(64);
+    }
 }
 
 context transaction {
+    
      entity purchaseorder: commons.Amount, cuid {
             PO_ID: Integer;     	
             PARTNER_GUID: association to master.businesspartner;                      
@@ -84,4 +91,5 @@ context transaction {
             PRODUCT_GUID: association to master.product;           	
               
      }
+
 }
