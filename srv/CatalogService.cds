@@ -1,4 +1,4 @@
-using { capdemo.db.master, capdemo.db.transaction } from '../db/datamodel';
+using { capdemo.db.master, capdemo.db.transaction, capdemo.db.CDSView } from '../db/datamodel';
 service CatalogService@(path:'/CatalogService') {
 
     entity EmployeeSet as projection on master.employees;
@@ -22,5 +22,9 @@ service CatalogService@(path:'/CatalogService') {
         PARENT_KEY: redirected to POs,
         PRODUCT_GUID: redirected to ProductSet
     }
-
+    entity POWorklist as projection on CDSView.POWorklist;
+    entity ProductOrders as projection on CDSView.ProductViewSub;
+    entity ProductAggregation as projection on CDSView.CProductValuesView excluding {
+        ProductId
+    };
 }
