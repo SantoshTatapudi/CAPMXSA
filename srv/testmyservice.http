@@ -1,6 +1,7 @@
 ## Test get of service end pionts for v4 and v2
 GET http://localhost:4004/CatalogService
 
+###
 GET http://localhost:4004/v2/CatalogService/POs
 
 GET http://localhost:4004/v2/CatalogService
@@ -35,6 +36,7 @@ Content-Type: application/json
 }
 
 ###
+
 POST http://localhost:4004/CatalogService/POs
 Content-Type: application/json
 
@@ -45,14 +47,14 @@ Content-Type: application/json
 	    "NET_AMOUNT" : "5022",
 	    "TAX_AMOUNT" : "100.38",
 	    "ID" : "02BD2137-0890-1AEA-A9C2-BB55C1978999",
-	    "PO_ID" : "310000000",
-	    "PARTNER_GUID_NODE_KEY" : "74867AD200E41EDBA5D8B06885B01052",
+	    "PO_ID" : 310000000,
+	    "PARTNER_GUID_NODE_KEY" : "74867AD200E41EDBA5D8B06885A66052",
 	    "LIFECYCLE_STATUS" : "N",
 	    "OVERALL_STATUS" : "P",
 	    "NOTE" : null,
         "CREATEDBY": "02BD2137-0890-1AEA-A9C2-BB55C197E7FB",
         "MODIFIEDBY": "02BD2137-0890-1AEA-A9C2-BB55C19807FB",
-        "CREATEDAT": "/Date(1640995200000)/",
-        "MODIFIEDAT": "/Date(1640995200000)/"
+        "CREATEDAT": "2022-02-15",
+        "MODIFIEDAT": "2022-02-15"
 
 }
