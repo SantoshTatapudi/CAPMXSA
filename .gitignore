@@ -1,12 +1,13 @@
 
 # auto generated wildcard
 gen/db/.env
+load_modules
+gen
+node_modules
+
     # added by cds deploy
     default-env.json
-    node_modules
-node_modules
-gen
-
+    
     # added by cds deploy
     default-env.json
     

@@ -1,45 +1,12 @@
 ## Test get of service end pionts for v4 and v2
 GET http://localhost:4004/CatalogService
 
-###
+### Service to get POs - OData V2
 GET http://localhost:4004/v2/CatalogService/POs
 
-GET http://localhost:4004/v2/CatalogService
-
-http://localhost:4004/CatalogService/POs?$top=2
-
-
-POST http://localhost:4004/localhost:4004/CatalogService/EmployeeSet
-
-###Read Service Metadata
-GET http://localhost:4004/CatalogService/$metadata
-
-###Read top 3 employees
-GET http://localhost:4004/CatalogService/EmployeeSet?$top=3
-
-###
-POST http://localhost:4004/CatalogService/EmployeeSet
-Content-Type: application/json
-
-{
-	"nameFirst": "Santosh",
-	"nameMiddle" : "Ramkumar",
-	"nameLast" : "Tatapudi",
-	"nameInitials" : null,
-	"sex" : "M",
-	"language" : "E",
-	"phoneNumber" : null,
-	"email" : "santoshtatapudi@yahoo.com",
-	"loginName" : "SantoshT",
-	"accountNumber" : "123456789",
-	"bankName" : "HDFC bank"
-}
-
-###
-
+### Service to insert data into Transaction Purchase Order - OData V4
 POST http://localhost:4004/CatalogService/POs
 Content-Type: application/json
-
 {
 
 	    "Currency_code" : "INR",
@@ -57,4 +24,81 @@ Content-Type: application/json
         "CREATEDAT": "2022-02-15",
         "MODIFIEDAT": "2022-02-15"
 
+}
+
+### Service to insert data into Transaction Purchase Order - OData V4
+POST http://localhost:4004/CatalogService/POs
+Content-Type: application/json
+{
+
+	    "Currency_code" : "INR",
+	    "GROSS_AMOUNT" : "5122.38",
+	    "NET_AMOUNT" : "5022",
+	    "TAX_AMOUNT" : "100.38",
+	    "ID" : "02BD2137-0890-1AEA-A9C2-BB55C1978999",
+	    "PO_ID" : 310000000,
+	    "PARTNER_GUID_NODE_KEY" : "74867AD200E41EDBA5D8B06885A66052",
+	    "LIFECYCLE_STATUS" : "N",
+	    "OVERALL_STATUS" : "P",
+	    "NOTE" : null,
+        "CREATEDBY": "02BD2137-0890-1AEA-A9C2-BB55C197E7FB",
+        "MODIFIEDBY": "02BD2137-0890-1AEA-A9C2-BB55C19807FB",
+        "CREATEDAT": "2022-02-15",
+        "MODIFIEDAT": "2022-02-15"
+
+}
+
+### Service to get all employee sets - OData V2
+GET http://localhost:4004/v2/CatalogService/EmployeeSet
+
+### Service to get all employee sets - OData V4
+GET http://localhost:4004/CatalogService/EmployeeSet
+
+### Service to insert data into Master Employees - OData V4
+POST http://localhost:4004/CatalogService/EmployeeSet
+Content-Type: application/json
+{
+	"nameFirst": "Santosh",
+	"nameMiddle" : "Ramkumar",
+	"nameLast" : "Tatapudi",
+	"nameInitials" : null,
+	"sex" : "M",
+	"language" : "E",
+	"phoneNumber" : null,
+	"email" : "santoshtatapudi@yahoo.com",
+	"loginName" : "SantoshT",
+	"accountNumber" : "123456789",
+	"bankName" : "HDFC bank"
+}
+
+### Service to get specific employee set - OData V2
+GET http://localhost:4004/v2/CatalogService/EmployeeSet(0c260dc1-6f14-438a-a919-16a39c6a4c14)
+
+### Service to get all employee sets - OData V4
+GET http://localhost:4004/v2/CatalogService/EmployeeSet/0c260dc1-6f14-438a-a919-16a39c6a4c14
+
+### Service to insert data into Master Employees - OData V4
+POST http://localhost:4004/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+	"nameFirst": "Santosh",
+	"nameMiddle" : "Ramkumar",
+	"nameLast" : "Tatapudi",
+	"nameInitials" : null,
+	"sex" : "M",
+	"language" : "E",
+	"phoneNumber" : null,
+	"email" : "santoshtatapudi@yahoo.com",
+	"loginName" : "SantoshT",
+	"accountNumber" : "123456789",
+	"bankName" : "HDFC bank"
+}
+
+### Service to update phone number of a specific employee - OData V4
+PATCH http://localhost:4004/CatalogService/EmployeeSet/0c260dc1-6f14-438a-a919-16a39c6a4c14
+Content-Type: application/json
+
+{
+    "phoneNumber" : "+91 8886949533"
 }
