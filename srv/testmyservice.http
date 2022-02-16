@@ -72,10 +72,10 @@ Content-Type: application/json
 }
 
 ### Service to get specific employee set - OData V2
-GET http://localhost:4004/v2/CatalogService/EmployeeSet(0c260dc1-6f14-438a-a919-16a39c6a4c14)
+GET http://localhost:4004/v2/CatalogService/EmployeeSet(f13da3bd-6032-427a-9519-80c26053810f)
 
 ### Service to get all employee sets - OData V4
-GET http://localhost:4004/v2/CatalogService/EmployeeSet/0c260dc1-6f14-438a-a919-16a39c6a4c14
+GET http://localhost:4004/v2/CatalogService/EmployeeSet/f13da3bd-6032-427a-9519-80c26053810f
 
 ### Service to insert data into Master Employees - OData V4
 POST http://localhost:4004/CatalogService/EmployeeSet
@@ -96,9 +96,21 @@ Content-Type: application/json
 }
 
 ### Service to update phone number of a specific employee - OData V4
-PATCH http://localhost:4004/CatalogService/EmployeeSet/0c260dc1-6f14-438a-a919-16a39c6a4c14
+PATCH http://localhost:4004/CatalogService/EmployeeSet/f13da3bd-6032-427a-9519-80c26053810f
 Content-Type: application/json
 
 {
-    "phoneNumber" : "+91 8886949533"
+    "loginName" : "SantoshTata"
 }
+
+### Service to update Salary and Currency Code of a specific employee - OData V2
+PATCH http://localhost:4004/v2/CatalogService/EmployeeSet(f13da3bd-6032-427a-9519-80c26053810f)
+Content-Type: application/json
+
+{
+    "salaryAmount" : "11824983.39",
+    "Currency_code" : "INR"
+}
+
+### Service to delete specific employee details - Odata V4
+DELETE http://localhost:4004/CatalogService/EmployeeSet/f13da3bd-6032-427a-9519-80c26053810f
