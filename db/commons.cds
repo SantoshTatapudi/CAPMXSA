@@ -23,5 +23,5 @@ abstract entity Amount{
     TAX_AMOUNT : AmountT;
 }
 
-type PhoneNumber : String(30)@assert.format : '^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$';
+type PhoneNumber : String(30)@assert.format : '/^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/';
 type Email: String(255)@assert.format : '^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$';
