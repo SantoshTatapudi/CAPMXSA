@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_BP" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BP"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CAPDEMO_DB_MASTER_EMPLOYEES">
+    <resourceUri>CAPDEMO_DB_MASTER_EMPLOYEES</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="CAPDEMO_DB_MASTER_EMPLOYEES">
+  <attributes>
+    <attribute id="NAMEFIRST" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAMEFIRST"/>
+      <keyMapping columnObjectName="CAPDEMO_DB_MASTER_EMPLOYEES" columnName="NAMEFIRST"/>
+    </attribute>
+    <attribute id="NAMELAST" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAMELAST"/>
+      <keyMapping columnObjectName="CAPDEMO_DB_MASTER_EMPLOYEES" columnName="NAMELAST"/>
+    </attribute>
+    <attribute id="EMAIL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMAIL"/>
+      <keyMapping columnObjectName="CAPDEMO_DB_MASTER_EMPLOYEES" columnName="EMAIL"/>
+    </attribute>
+    <attribute id="LOGINNAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOGINNAME"/>
+      <keyMapping columnObjectName="CAPDEMO_DB_MASTER_EMPLOYEES" columnName="LOGINNAME"/>
+    </attribute>
+    <attribute id="SALARYAMOUNT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALARYAMOUNT"/>
+      <keyMapping columnObjectName="CAPDEMO_DB_MASTER_EMPLOYEES" columnName="SALARYAMOUNT"/>
+    </attribute>
+    <attribute id="ACCOUNTNUMBER" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACCOUNTNUMBER"/>
+      <keyMapping columnObjectName="CAPDEMO_DB_MASTER_EMPLOYEES" columnName="ACCOUNTNUMBER"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

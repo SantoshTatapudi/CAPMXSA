@@ -42,7 +42,7 @@
     },
     "cds": {
         "build": {
-            "target": "./gen"
+            "target": "."
         },
         "requires": {
             "db": {
