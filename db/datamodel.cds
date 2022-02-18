@@ -1,10 +1,10 @@
-namespace capdemo.db;
+// namespace capdemo.db;
 using { cuid, managed, temporal, Currency } from '@sap/cds/common';
 using { capdemo.commons } from './commons';
 
 type Guid : String(32);
 
-
+context capdemo.db {
 context master {
     entity businesspartner {
         key NODE_KEY : Guid;
@@ -186,4 +186,27 @@ context CDSView {
             round(sum(PO_ORDERS.GrossAmount),2) as ![POGrossAmount]: Decimal(10, 2)
         }
         group by ProductId,Country,PO_ORDERS.CurrencyCode
+}
+}
+
+@cds.persistence.calcview
+@cds.persistence.exists 
+Entity ![CV_PURCHSE] {
+key     ![NODE_KEY]: String(32)  @title: 'NODE_KEY: NODE_KEY' ; 
+key     ![BP_ROLE]: String(2)  @title: 'BP_ROLE: BP_ROLE' ; 
+key     ![BP_ID]: String(32)  @title: 'BP_ID: BP_ID' ; 
+key     ![COMPANY_NAME]: String(250)  @title: 'COMPANY_NAME: COMPANY_NAME' ; 
+key     ![CITY]: String(44)  @title: 'CITY: CITY' ; 
+key     ![STREET]: String(44)  @title: 'STREET: STREET' ; 
+key     ![COUNTRY]: String(44)  @title: 'COUNTRY: COUNTRY' ; 
+key     ![ID]: String(36)  @title: 'ID: ID' ; 
+key     ![PARTNER_GUID_NODE_KEY]: String(32)  @title: 'PARTNER_GUID_NODE_KEY: PARTNER_GUID_NODE_KEY' ; 
+key     ![OVERALL_STATUS]: String(1)  @title: 'OVERALL_STATUS: OVERALL_STATUS' ; 
+key     ![CURRENCY_CODE]: String(3)  @title: 'CURRENCY_CODE: CURRENCY_CODE' ; 
+key     ![TODAY]: Date  @title: 'TODAY' ; 
+key     ![PO_ID]: Integer  @title: 'PO_ID: PO_ID' ; 
+key     ![GROSS_AMOUNT]: Decimal(15, 2)  @title: 'GROSS_AMOUNT: GROSS_AMOUNT' ; 
+key     ![NET_AMOUNT]: Decimal(15, 2)  @title: 'NET_AMOUNT: NET_AMOUNT' ; 
+key     ![TAX_AMOUNT]: Decimal(15, 2)  @title: 'TAX_AMOUNT: TAX_AMOUNT' ; 
+key     ![PO_ITEM_POS]: Integer  @title: 'PO_ITEM_POS: PO_ITEM_POS' ; 
 }

@@ -1,4 +1,4 @@
-using { capdemo.db.master, capdemo.db.transaction, capdemo.db.CDSView } from '../db/datamodel';
+using { capdemo.db.master, capdemo.db.transaction, capdemo.db.CDSView, CV_PURCHSE } from '../db/datamodel';
 service CatalogService@(path:'/CatalogService') {
 
     entity EmployeeSet as projection on master.employees;
@@ -27,4 +27,6 @@ service CatalogService@(path:'/CatalogService') {
     entity ProductAggregation as projection on CDSView.CProductValuesView excluding {
         ProductId
     };
+
+    entity CalcViewPurchase as projection on CV_PURCHSE;
 }
