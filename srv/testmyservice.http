@@ -83,15 +83,15 @@ POST http://localhost:4004/CatalogService/EmployeeSet
 Content-Type: application/json
 
 {
-	"nameFirst": "Santosh",
-	"nameMiddle" : "Ramkumar",
+	"nameFirst": "Sundeep",
+	"nameMiddle" : "",
 	"nameLast" : "Tatapudi",
 	"nameInitials" : null,
 	"sex" : "M",
 	"language" : "E",
 	"phoneNumber" : null,
-	"email" : "santoshtatapudi@yahoo.com",
-	"loginName" : "SantoshT",
+	"email" : "Sundeep@yahoo.com",
+	"loginName" : "Sundeep",
 	"accountNumber" : "123456789",
 	"bankName" : "HDFC bank"
 }
@@ -123,7 +123,7 @@ Content-Type: application/json
 }
 
 ### Service to update Salary and Currency Code of a specific employee - OData V2
-PATCH http://localhost:4004/v2/CatalogService/EmployeeSet(f13da3bd-6032-427a-9519-80c26053810f)
+PATCH http://localhost:4004/v2/CatalogService/EmployeeSet(cdb0dd08-0e88-48d3-b300-8b4cc356c411)
 Content-Type: application/json
 
 {
@@ -132,4 +132,4 @@ Content-Type: application/json
 }
 
 ### Service to delete specific employee details - Odata V4
-DELETE http://localhost:4004/CatalogService/EmployeeSet/f13da3bd-6032-427a-9519-80c26053810f
+DELETE http://localhost:4004/CatalogService/EmployeeSet/cdb0dd08-0e88-48d3-b300-8b4cc356c411
