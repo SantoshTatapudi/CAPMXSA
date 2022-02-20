@@ -1,5 +1,5 @@
 ## Test get of service end pionts for v4 and v2
-GET http://localhost:4004/CatalogService
+GET http://localhost:4004/CatalogService/$metadata
 
 ### Service to get POs - OData V2
 GET http://localhost:4004/v2/CatalogService/POs
@@ -133,3 +133,76 @@ Content-Type: application/json
 
 ### Service to delete specific employee details - Odata V4
 DELETE http://localhost:4004/CatalogService/EmployeeSet/cdb0dd08-0e88-48d3-b300-8b4cc356c411
+
+### Service to get Employee Information Entity
+GET http://localhost:4004/v2/CatalogService/EmployeeDetails
+
+### Service to insert data into Employee Information Entity
+POST http://localhost:4004/CatalogService/EmployeeDetails
+Content-Type: application/json
+
+{
+    "nameFirst": "Santosh",
+	"nameMiddle" : "Ramkumar",
+	"nameLast" : "Tatapudi",
+	"nameInitials" : null,
+	"sex" : "M",
+	"language" : "E",
+	"phoneNumber" : null,
+	"email" : "santoshtatapudi@yahoo.com",
+	"loginName" : "SantoshT",
+	"linkToBankEntity_EmpBankID" : "SantoshT",
+    "linkToBankEntity_accountNumber" : "20228627114"
+}
+
+### Service to get Bank Details
+GET http://localhost:4004/v2/CatalogService/BankInformation
+
+### Service to insert into Bank Details Entity
+POST  http://localhost:4004/v2/CatalogService/BankInformation
+Content-Type: application/json
+
+{
+    "EmpBankID" : "SantoshT",
+    "accountNumber" : "20228627114",
+    "bankId" : "2022-2744",
+    "bankName" : "Business Bank"
+
+}
+
+### Service to get entity - Expanded format
+GET http://localhost:4004/v2/CatalogService/EmployeeDetails?$expand=linkToBankEntity
+
+### Service to get Employee Contact Information
+GET  http://localhost:4004/CatalogService/EmployeeContact
+
+### Service to insert data into Employee Information Entity
+POST http://localhost:4004/CatalogService/EmployeeContact
+Content-Type: application/json
+
+{
+    "nameFirst": "Santosh",
+	"nameMiddle" : "Ramkumar",
+	"nameLast" : "Tatapudi",
+	"nameInitials" : null,
+	"sex" : "M",
+	"language" : "E",
+	"phoneNumber" : null,
+	"email" : "santoshtatapudi@yahoo.com",
+	"loginName" : "SantoshT",
+	"linkToBankEntity_EmpBankID" : "SantoshT",
+    "linkToBankEntity_accountNumber" : "20228627114"
+}
+
+### Service to get Bank Details
+GET http://localhost:4004/v2/CatalogService/ContactInformation
+
+### Service to insert into Bank Details Entity
+POST  http://localhost:4004/v2/CatalogService/ContactInformation
+Content-Type: application/json
+
+{
+    "phoneType" : "Mobile",
+    "phoneNumber" : "8886949533"
+
+}

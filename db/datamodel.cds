@@ -63,10 +63,49 @@ context master {
         email: commons.Email;
         loginName: String(12);
         Currency: Currency;
-        salaryAmount: commons.AmountT;	
+        salaryAmount: commons.AmountT;
         accountNumber: String(16);	
         bankId: String(20);
         bankName: String(64);
+    }
+
+    entity employeedetails : cuid {
+        nameFirst: String(40);
+        nameMiddle: String(40);	
+        nameLast: String(40);	
+        nameInitials: String(40);	
+        sex	: commons.Gender;
+        language: String(1);
+        phoneNumber: commons.PhoneNumber;
+        email: commons.Email;
+        loginName: String(12);
+        Currency: Currency;
+        salaryAmount: commons.AmountT;
+        linkToBankEntity : Association to bankinformation;
+    }
+    entity bankinformation {
+        key EmpBankID: String(10);
+        key accountNumber: String(16);	
+        bankId: String(20);
+        bankName: String(64);
+    }
+
+    entity employeecontact: cuid {
+        nameFirst: String(40);
+        nameMiddle: String(40);	
+        nameLast: String(40);	
+        nameInitials: String(40);	
+        sex	: commons.Gender;
+        language: String(1);
+        linkToContact : Association to contactinfo;
+        email: commons.Email;
+        loginName: String(12);
+        Currency: Currency;
+        salaryAmount: commons.AmountT;
+    }
+    entity contactinfo { 
+        phoneType: String(10);
+        phoneNumber: commons.PhoneNumber;
     }
 }
 

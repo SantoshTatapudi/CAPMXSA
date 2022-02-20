@@ -33,6 +33,11 @@ modules:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
+  - name: mypocapapp-backend
+    type: java
+    path: srv
+    parameters:
+      memory: 1024M
 
   # -------------------- SIDECAR MODULE ------------------------
   - name: mypocapapp-db-deployer

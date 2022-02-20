@@ -5,6 +5,14 @@ service CatalogService@(path:'/CatalogService') {
 
     entity AddressSet as projection on master.address;
 
+    entity EmployeeDetails as projection on master.employeedetails;
+
+    entity EmployeeContact as projection on master.employeecontact;
+
+    entity BankInformation as projection on master.bankinformation;
+
+    entity ContactInformation as projection on master.contactinfo;
+
     entity ProductSet as projection on master.product;
 
     entity BPSet as projection on master.businesspartner;
@@ -29,4 +37,5 @@ service CatalogService@(path:'/CatalogService') {
     };
 
     entity CalcViewPurchase as projection on CV_PURCHSE;
+    
 }
